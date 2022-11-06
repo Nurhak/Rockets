@@ -1,4 +1,4 @@
-# Quin Assingment
+# Moonshot Calendar Inc. 
 ## Description
 An application that shows rockets based on map location.
 
