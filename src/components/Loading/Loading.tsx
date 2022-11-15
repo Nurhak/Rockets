@@ -1,5 +1,3 @@
-import { memo } from 'react';
-
 function Loading() {
   return (
     <div role="status">
@@ -24,4 +22,4 @@ function Loading() {
   );
 }
 
-export default memo(Loading);
+export default Loading;

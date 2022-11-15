@@ -1,5 +1,3 @@
-import { memo } from 'react';
-
 function Footer() {
   return (
     <footer className="z-50 p-4 bg-white shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
@@ -10,4 +8,4 @@ function Footer() {
   );
 }
 
-export default memo(Footer);
+export default Footer;

@@ -7,6 +7,7 @@ import logger from '@/lib/logger';
 import { Launch } from '@/data/Launch';
 import CustomMarker from '@/components/Map/CustomMarker';
 import DatePicker from '@/components/DatePicker/CustomDatePicker';
+import Select from '@/components/Select/Select';
 
 const AmsterdamCoordinates = {
   lat: 52.370216,
@@ -18,6 +19,10 @@ function Main() {
   const [endDate, setEndDate] = useState<Date>(
     new Date(new Date().setMonth(new Date().getMonth() + 3))
   );
+  const [status, setStatus] = useState<number | null>(null);
+  const [statusOptions, setStatusOptions] = useState<
+    Array<Pick<Launch, 'status'>>
+  >([]);
 
   const { data: launches } = useLaunches({
     limit: 150,
@@ -31,11 +36,27 @@ function Main() {
     },
   });
 
-  logger.info('Launches', launches);
-
   return (
     <div className="w-full h-full relative">
-      <div className="w-full bg-gray-800 pb-6 flex items-center justify-center">
+      <div className="w-full bg-gray-800 pb-6 flex gap-5 items-center justify-center">
+        <div className="flex gap-2 items-center justify-center">
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+          <label htmlFor="status" className="text-white">
+            Status:
+          </label>
+          <div className="w-40">
+            <Select
+              className="w-44"
+              id="status"
+              value={status ?? 0}
+              onChange={(val: number) => {
+                setStatus(val);
+              }}
+            >
+              <option value={0}>All</option>
+            </Select>
+          </div>
+        </div>
         <div className="flex gap-5">
           <DatePicker
             label="Start date"

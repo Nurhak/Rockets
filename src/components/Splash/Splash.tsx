@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import Loading from '../Loading/Loading';
 
 function Splash() {
@@ -13,4 +12,4 @@ function Splash() {
   );
 }
 
-export default memo(Splash);
+export default Splash;

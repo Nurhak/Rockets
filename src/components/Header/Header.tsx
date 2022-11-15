@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import Rocket from '@/assets/rocket.svg';
 import LazyImage from '../LazyImage/LazyImage';
@@ -22,4 +21,4 @@ function Header() {
   );
 }
 
-export default memo(Header);
+export default Header;
